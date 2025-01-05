@@ -1,8 +1,18 @@
 [build]
-  functions = "functions"
-  publish = "public"
+  functions = "functions"      # Directory for serverless functions
+  publish = "public"           # Directory where static assets are located
 
 [[redirects]]
-  from = "/dashboard"
+  from = "/login"
   to = "/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin-dashboard"
+  to = "/admin-dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/employee-dashboard"
+  to = "/employee-dashboard.html"
   status = 200
