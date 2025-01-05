@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for better dashboard design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            background-color: white;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .attendance-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .attendance-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .clock-in-out-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message, .success-message {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .logout-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .logout-button {
+            background-color: red;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Employee Dashboard</h1>
+        <div class="attendance-info">
+            <p id="date-time"></p>
+            <p id="attendance-status">Attendance Status: <strong>Not Clocked In</strong></p>
+        </div>
+        <div class="clock-in-out-container">
+            <button id="clock-in-btn">Clock In</button>
+            <button id="clock-out-btn" style="display: none;">Clock Out</button>
+        </div>
+        <div id="message" class="success-message"></div>
+        <div id="error-message" class="error-message"></div>
+
+        <!-- Attendance Log Table -->
+        <table id="attendance-log-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Clock In</th>
+                    <th>Clock Out</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will go here -->
+            </tbody>
+        </table>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <h2>Attendance Stats</h2>
+            <p>Present Days: <span id="present-days">0</span></p>
+            <p>Absent Days: <span id="absent-days">0</span></p>
+            <p>Weekly Off: <span id="week-off">0</span></p>
+            <p>Holidays: <span id="holidays">0</span></p>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <button class="logout-button" id="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <script src="employee-dashboard.js"></script>
+</body>
+</html>
